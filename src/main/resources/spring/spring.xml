@@ -4,7 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!--加载属性配置文件-->
-    <context:property-placeholder location="classpath*:jdbc.properties"/>
+    <context:property-placeholder location="classpath*:properties/jdbc.properties"/>
     <!--扫瞄注解包-->
     <context:component-scan base-package="com.lyf"/>
     <!-- 配置数据源 -->
@@ -60,9 +60,9 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 自动扫描 mapper.xml文件(读取的是编译出来的classes目录中xml文件) -->
-        <property name="mapperLocations" value="classpath:com/**/mapper/*.xml"></property>
+        <property name="mapperLocations" value="classpath:com/lyf/ssm/mapper/StudentMapper.xml"></property>
         <!--最新mybatis的配置文件位置-->
-        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
     </bean>
 
 
