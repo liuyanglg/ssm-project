@@ -1,7 +1,11 @@
 package com.lyf.ssm.entity;
 
+import com.lyf.global.uitls.DateUtil;
+
 import java.io.Serializable;
 import java.util.Date;
+
+import static com.lyf.global.uitls.Constants.DATE_FORMAT_2;
 
 public class Student implements Serializable{
     private String sid;
@@ -52,6 +56,6 @@ public class Student implements Serializable{
 
     @Override
     public String toString() {
-        return "sid:"+sid+" , name:"+name+" , sex:"+sex+" , birthday:"+birthday+" , address:"+address;
+        return "sid:"+sid+" , name:"+name+" , sex:"+sex+" , birthday:"+ DateUtil.dateFormat(birthday,DATE_FORMAT_2)+" , address:"+address;
     }
 }

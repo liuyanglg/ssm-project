@@ -8,5 +8,10 @@ import java.util.List;
 
 public interface StudentDao {
     Student get(String sid);
+
+    List<Student> queryByName(String name);
+
     List<Student> queryByPage(Page<Student> page);
+
+    int insert(Student student);
 }

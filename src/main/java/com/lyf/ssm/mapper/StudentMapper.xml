@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lyf.ssm.dao.StudentDao">
     <select id="get" resultType="Student" parameterType="String">
-        select * from tb_student_info where sid=${value}
+        select * from tb_student_info where sid=#{value}
     </select>
 
     <select id="queryByPage" resultType="Student" parameterType="Page">
@@ -19,6 +19,14 @@
         </if>
         limit ${startIndex}, ${pageSize}
     </select>
+
+    <select id="queryByName" resultType="Student" parameterType="String">
+                select * from tb_student_info where name=#{value}
+    </select>
+
+    <insert id="insert"  parameterType="Student">
+        insert into tb_student_info(sid,name,sex,birthday,address) values(#{sid},#{name},#{sex},#{birthday},#{address})
+    </insert>
 </mapper>
 
 
