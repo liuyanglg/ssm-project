@@ -5,6 +5,20 @@
     <select id="get" resultType="Student" parameterType="String">
         select * from tb_student_info where sid=${value}
     </select>
+
+    <select id="queryByPage" resultType="Student" parameterType="Page">
+        select * from tb_student_info
+        <if test="obj!=null">
+            <where>
+                <if test="obj.sid!=null">sid=#{obj.sid}</if>
+                <if test="obj.name!=null">and name like '${obj.name}%'</if>
+                <if test="obj.sex!=null">and sex=#{obj.sex}</if>
+                <if test="obj.birthday!=null">and birthday=#{obj.birthday}</if>
+                <if test="obj.address!=null">and address like '${obj.address}%'</if>
+            </where>
+        </if>
+        limit ${startIndex}, ${pageSize}
+    </select>
 </mapper>
 
 
