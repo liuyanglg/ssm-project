@@ -20,11 +20,30 @@
         limit ${startIndex}, ${pageSize}
     </select>
 
+    <select id="queryByPageTest" resultType="StuCourse" parameterType="Page">
+        select s.* from tb_student_info s LEFT JOIN tb_student_course sc ON s.sid=sc.sid
+        <if test="obj!=null">
+            <where>
+                <if test="obj.sid!=null">s.sid=#{obj.sid}</if>
+                <if test="obj.name!=null">and s.name like '${obj.name}%'</if>
+                <if test="obj.sex!=null">and s.sex=#{obj.sex}</if>
+                <if test="obj.birthday!=null">and s.birthday=#{obj.birthday}</if>
+                <if test="obj.address!=null">and s.address like '${obj.address}%'</if>
+                <if test="otherParameter!=null">
+                    <foreach item="value" index="key" collection="otherParameter" separator=",">
+                        and s.sid in(${value})
+                    </foreach>
+                </if>
+            </where>
+        </if>
+        limit ${startIndex}, ${pageSize}
+    </select>
+
     <select id="queryByName" resultType="Student" parameterType="String">
                 select * from tb_student_info where name=#{value}
     </select>
 
-    <insert id="insert"  parameterType="Student">
+    <insert id="insert" parameterType="Student">
         insert into tb_student_info(sid,name,sex,birthday,address) values(#{sid},#{name},#{sex},#{birthday},#{address})
     </insert>
 </mapper>
