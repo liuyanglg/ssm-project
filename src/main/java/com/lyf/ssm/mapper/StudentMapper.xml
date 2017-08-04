@@ -30,9 +30,10 @@
                 <if test="obj.birthday!=null">and s.birthday=#{obj.birthday}</if>
                 <if test="obj.address!=null">and s.address like '${obj.address}%'</if>
                 <if test="otherParameter!=null">
-                    <foreach item="value" index="key" collection="otherParameter" separator=",">
-                        and s.sid in(${value})
-                    </foreach>
+                    <!--<foreach item="value" index="key" collection="otherParameter" separator=",">-->
+                        <!--and s.sid in(${value})-->
+                    <!--</foreach>-->
+                    and s.sid in(${otherParameter.sids})
                 </if>
             </where>
         </if>

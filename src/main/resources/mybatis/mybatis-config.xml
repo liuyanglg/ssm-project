@@ -10,8 +10,13 @@
         <typeAlias type="com.lyf.ssm.entity.Page" alias="Page"/>
         <typeAlias type="com.lyf.ssm.entity.Student" alias="Student"/>
         <typeAlias type="com.lyf.ssm.entity.StuCourse" alias="StuCourse"/>
+        <typeAlias type="com.lyf.nuonuo.entity.CompanyCard" alias="CompanyCard"/>
+        <typeAlias type="com.lyf.nuonuo.entity.CompanyCardAudit" alias="CompanyCardAudit"/>
     </typeAliases>
     <mappers>
         <mapper resource="com/lyf/ssm/mapper/StudentMapper.xml"/>
+        <mapper resource="com/lyf/nuonuo/mapper/CompanyCardMapper.xml"/>
+        <mapper resource="com/lyf/nuonuo/mapper/CompanyCardAuditMapper.xml"/>
+        <mapper resource="com/lyf/nuonuo/mapper/TaxServiceMapper.xml"/>
     </mappers>
 </configuration>
