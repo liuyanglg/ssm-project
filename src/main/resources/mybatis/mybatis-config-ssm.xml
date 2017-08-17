@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <!--<setting name="logImpl" value="LOG4J" />-->
+    </settings>
+    <typeAliases>
+        <typeAlias type="com.lyf.ssm.entity.Page" alias="Page"/>
+        <typeAlias type="com.lyf.ssm.entity.Student" alias="Student"/>
+        <typeAlias type="com.lyf.ssm.entity.StuCourse" alias="StuCourse"/>
+    </typeAliases>
+    <mappers>
+        <mapper resource="com/lyf/ssm/mapper/StudentMapper.xml"/>
+    </mappers>
+</configuration>

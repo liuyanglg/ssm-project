@@ -4,19 +4,30 @@
 <configuration>
     <settings>
         <!-- 打印查询语句 -->
-        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
     <typeAliases>
+        <!--SSM-->
         <typeAlias type="com.lyf.ssm.entity.Page" alias="Page"/>
         <typeAlias type="com.lyf.ssm.entity.Student" alias="Student"/>
         <typeAlias type="com.lyf.ssm.entity.StuCourse" alias="StuCourse"/>
-        <typeAlias type="com.lyf.nuonuo.entity.CompanyCard" alias="CompanyCard"/>
-        <typeAlias type="com.lyf.nuonuo.entity.CompanyCardAudit" alias="CompanyCardAudit"/>
+        <!--CompanyCard-->
+        <typeAlias type="com.lyf.companyCard.entity.CompanyCard" alias="CompanyCard"/>
+        <typeAlias type="com.lyf.companyCard.entity.CompanyCardAudit" alias="CompanyCardAudit"/>
+        <!--ShopBuyer-->
+        <typeAlias type="com.lyf.shopBuyer.entity.ShopBuyerService" alias="ShopBuyerService"/>
+        <!--UserService-->
+        <typeAlias type="com.lyf.userService.entity.UserService" alias="UserService"/>
     </typeAliases>
     <mappers>
+        <!--SSM-->
         <mapper resource="com/lyf/ssm/mapper/StudentMapper.xml"/>
-        <mapper resource="com/lyf/nuonuo/mapper/CompanyCardMapper.xml"/>
-        <mapper resource="com/lyf/nuonuo/mapper/CompanyCardAuditMapper.xml"/>
-        <mapper resource="com/lyf/nuonuo/mapper/TaxServiceMapper.xml"/>
+        <!--CompanyCard-->
+        <mapper resource="com/lyf/companyCard/mapper/CompanyCardMapper.xml"/>
+        <mapper resource="com/lyf/companyCard/mapper/CompanyCardAuditMapper.xml"/>
+        <!--ShopBuyer-->
+        <mapper resource="com/lyf/shopBuyer/mapper/ShopBuyerService.xml"/>
+        <!--UserService-->
+        <mapper resource="com/lyf/userService/mapper/UserService.xml"/>
     </mappers>
 </configuration>
