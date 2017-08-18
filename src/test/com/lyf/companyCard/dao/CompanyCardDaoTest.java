@@ -3,7 +3,6 @@ package com.lyf.companyCard.dao;
 import com.lyf.base.BaseTest;
 import com.lyf.companyCard.entity.CompanyCard;
 import com.lyf.global.configer.DataSourceContextHolder;
-import com.lyf.global.configer.DynamicDataSource;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
